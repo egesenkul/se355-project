@@ -7,6 +7,7 @@ public class GravityReciever : MonoBehaviour {
 	public Gravity gravity;
 	// Use this for initialization
 	void Start () {
+		gravity=GameObject.Find ("World").GetComponent<Gravity>();
 		Rigidbody rb = GetComponent<Rigidbody> ();
 		rb.useGravity = false;
 		rb.freezeRotation = true;

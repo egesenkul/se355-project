@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour {
 	// This script for giving a gravity for to world - EGE 
-	float gravityForce = -20;
+	float gravityForce = -150;
 
 	public void ApplyGravity(Transform reciever){
 		Rigidbody rb = reciever.GetComponent<Rigidbody> ();
