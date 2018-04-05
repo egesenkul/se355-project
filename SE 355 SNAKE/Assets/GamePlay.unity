@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BodyParts:
   - {fileID: 1443853600}
-  mindistance: 0.25
+  mindistance: 0.5
   beginsize: 1
   speed: 1
   rotationSpeed: 50
