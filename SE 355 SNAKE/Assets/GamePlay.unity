@@ -140,12 +140,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41ce968a6352412c823d5f776627f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSwipeDist: 50
   BodyParts:
   - {fileID: 1443853600}
-  mindistance: 0.5
+  mindistance: 1
   beginsize: 1
   speed: 1
-  rotationSpeed: 50
+  rotationSpeed: 90
   bodyprefab: {fileID: 1438538504225276, guid: 9060ab5a17a4849719b9f96375f62f55, type: 2}
 --- !u!4 &185532817
 Transform:

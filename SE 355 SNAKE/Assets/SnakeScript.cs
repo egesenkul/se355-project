@@ -10,6 +10,9 @@ public class SnakeScript : MonoBehaviour {
 	public float mindistance = 0.25f;
 	public int beginsize=1;
 
+	bool swipeRight=false;
+	bool swipeLeft=false;
+
 	float swipeDistance;
 
 	Vector3 startPos;
@@ -34,6 +37,7 @@ public class SnakeScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Move ();
+
 		if(Input.GetKeyDown(KeyCode.Q)){
 			AddBodyPart();
 		}
@@ -41,6 +45,33 @@ public class SnakeScript : MonoBehaviour {
 
 	public void Move(){
 		float curspeed = speed;
+		BodyParts[0].Translate(BodyParts[0].forward*curspeed*Time.smoothDeltaTime,Space.World);
+		if (swipeRight) {
+			BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * 10);
+		} else if (swipeLeft) {
+			BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * -10);
+		}
+		swipeLeft = swipeRight = false;
+		for(int i =1;i<BodyParts.Count;i++){
+			curBodyPart = BodyParts[i];
+			PrevBodyPart = BodyParts[i-1];
+
+			dis = Vector3.Distance(PrevBodyPart.position,curBodyPart.position);
+
+			Vector3 newpos = PrevBodyPart.position;
+
+			newpos.y = BodyParts[0].position.y;
+
+			float T = Time.deltaTime*dis/mindistance*curspeed;
+
+			if(T> 0.5f)
+				T=0.5f;
+
+			curBodyPart.position = Vector3.Slerp(curBodyPart.position,newpos,T);
+			//curBodyPart.position = newpos;
+			curBodyPart.rotation = Quaternion.Slerp(curBodyPart.rotation,PrevBodyPart.rotation,T);
+		}
+
 		if (Input.touchCount > 0) {
 			Touch touch = Input.GetTouch (0);
 
@@ -54,33 +85,21 @@ public class SnakeScript : MonoBehaviour {
 
 				if (swipeDistance > minSwipeDist) {
 					Vector2 distance = endPos - startPos;
-					BodyParts[0].Translate(BodyParts[0].forward*curspeed*Time.smoothDeltaTime,Space.World);
+
 					if (distance.y > 0) {
-						AddBodyPart();
-					}
-					if (Input.GetKeyDown(KeyCode.A) && distance.x > 0) {
-						BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * 10);
-					} else if(Input.GetKeyDown(KeyCode.Z) && distance.x < 0){
-						BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * -10);
-					}
-					for(int i =1;i<BodyParts.Count;i++){
-						curBodyPart = BodyParts[i];
-						PrevBodyPart = BodyParts[i-1];
-
-						dis = Vector3.Distance(PrevBodyPart.position,curBodyPart.position);
-
-						Vector3 newpos = PrevBodyPart.position;
-
-						newpos.y = BodyParts[0].position.y;
-
-						float T = Time.deltaTime*dis/mindistance*curspeed;
-
-						if(T> 0.5f)
-							T=0.5f;
-
-						curBodyPart.position = Vector3.Slerp(curBodyPart.position,newpos,T);
-						//curBodyPart.position = newpos;
-						curBodyPart.rotation = Quaternion.Slerp(curBodyPart.rotation,PrevBodyPart.rotation,T);
+					//	AddBodyPart ();
+					} else if (distance.y < 0) {
+						if (beginsize != 3) {
+							beginsize++;
+							AddBodyPart ();
+						}
+						if (Input.GetKeyDown (KeyCode.A) || distance.x > 0) {
+							swipeRight = true;
+							swipeLeft = false;
+						} else if (Input.GetKeyDown (KeyCode.Z) || distance.x < 0) {
+							swipeRight = false;
+							swipeLeft = true;
+						}
 					}
 				}
 			}
@@ -89,8 +108,7 @@ public class SnakeScript : MonoBehaviour {
 	}
 
 	public void AddBodyPart(){
-		Quaternion aci = new Quaternion (0, 0, 0, 0);
-		//position,BodyParts[BodyParts.Count-1].rotation
+			//position,BodyParts[BodyParts.Count-1].rotation
 		Transform newpart = (Instantiate(bodyprefab,BodyParts[BodyParts.Count-1]. position,BodyParts[BodyParts.Count-1].rotation) as GameObject).transform;
 		newpart.SetParent (transform);
 		BodyParts.Add (newpart);
