@@ -10,8 +10,8 @@ public class SnakeScript : MonoBehaviour {
 	public float mindistance = 0.25f;
 	public int beginsize=1;
 
-	bool swipeRight=false;
-	bool swipeLeft=false;
+	public bool swipeRight=false;
+	public bool swipeLeft=false;
 
 	float swipeDistance;
 
