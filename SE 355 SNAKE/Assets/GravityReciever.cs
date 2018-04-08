@@ -5,6 +5,7 @@ using UnityEngine;
 public class GravityReciever : MonoBehaviour {
 
 	public Gravity gravity;
+
 	// Use this for initialization
 	void Start () {
 		gravity=GameObject.Find ("World").GetComponent<Gravity>();
