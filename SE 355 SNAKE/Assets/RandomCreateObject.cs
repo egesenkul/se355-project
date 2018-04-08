@@ -41,7 +41,7 @@ public class RandomCreateObject : MonoBehaviour {
 		GameObject[] Cubeler;
 		Cubeler = GameObject.FindGameObjectsWithTag("Cube");
 		foreach (GameObject item in Cubeler) {
-			if ((item.transform.position - position).magnitude < 0.5f) {
+			if ((item.transform.position - position).magnitude < 2.6f) {
 				return false;
 			}
 		}
