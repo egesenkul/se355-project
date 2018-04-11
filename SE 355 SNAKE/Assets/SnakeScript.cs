@@ -13,6 +13,8 @@ public class SnakeScript : MonoBehaviour {
 	public bool swipeRight=false;
 	public bool swipeLeft=false;
 
+	private float maxSpeed =10;
+
 	float swipeDistance;
 
 	Vector3 startPos;
@@ -45,6 +47,9 @@ public class SnakeScript : MonoBehaviour {
 
 	public void Move(){
 		float curspeed = speed;
+		if (speed > maxSpeed) {
+			curspeed = maxSpeed;
+		}
 		BodyParts[0].Translate(BodyParts[0].forward*curspeed*Time.smoothDeltaTime,Space.World);
 		if (swipeRight) {
 			BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * 10);
@@ -91,7 +96,6 @@ public class SnakeScript : MonoBehaviour {
 					} else if (distance.y < 0) {
 						if (beginsize != 3) {
 							beginsize++;
-							AddBodyPart ();
 						}
 						if (Input.GetKeyDown (KeyCode.A) || distance.x > 0) {
 							swipeRight = true;
