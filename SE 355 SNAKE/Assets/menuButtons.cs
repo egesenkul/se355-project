@@ -10,7 +10,6 @@ public class menuButtons : MonoBehaviour {
 	}
 
 	public void startGame(){
-		Debug.Log ("oyunu aç!");
 		Application.LoadLevel ("GamePlay");
 	}
 }
