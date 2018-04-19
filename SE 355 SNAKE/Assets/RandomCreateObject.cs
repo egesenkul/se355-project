@@ -8,22 +8,41 @@ public class RandomCreateObject : MonoBehaviour {
 	public Vector3 size;
 
 	GameObject player;
+	public GameObject mayin;
 
 	// Use this for initialization
 	void Start () {
 		size = new Vector3 (10, 10, 10);
 		player = GameObject.Find ("Snake");;
-		GenerateRandomObject (10);
+		GenerateRandomObjectCube (10);
+		GenerateRandomObjectMayin (3);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Q)){
-			GenerateRandomObject (1);
+			GenerateRandomObjectCube (1);
+		}
+		if(Input.GetKeyDown(KeyCode.E)){
+			GenerateRandomObjectMayin (1);
 		}
 	}
 
-	public void GenerateRandomObject(int i){
+	public void GenerateRandomObjectMayin(int i){
+		for (int j = 0; j < i; j++) {
+			Vector3 pos = new Vector3 (Random.Range (-size.x / 2, size.x / 2), Random.Range (-size.y / 2, size.y / 2), Random.Range (-size.z / 2, size.z / 2));
+			if ((player.transform.position - pos).magnitude > 0.5f && CubeMesafeKontrol(pos)) {
+				GameObject cube = Instantiate(mayin);
+				cube.tag = "mayin";
+				cube.transform.position = pos;
+				cube.AddComponent<Rigidbody> ();
+				cube.AddComponent<GravityReciever> ();
+				Debug.Log (cube.transform.position);
+			}
+		}
+	}
+
+	public void GenerateRandomObjectCube(int i){
 		for (int j = 0; j < i; j++) {
 			Vector3 pos = new Vector3 (Random.Range (-size.x / 2, size.x / 2), Random.Range (-size.y / 2, size.y / 2), Random.Range (-size.z / 2, size.z / 2));
 			if ((player.transform.position - pos).magnitude > 0.5f && CubeMesafeKontrol(pos)) {

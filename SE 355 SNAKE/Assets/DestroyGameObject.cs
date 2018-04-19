@@ -32,7 +32,7 @@ public class DestroyGameObject : MonoBehaviour {
 					PlayerPrefs.SetInt ("HighScore", score);
 				}
 				snake_script.speed += 0.25f;
-				sn.GenerateRandomObject(1);
+				sn.GenerateRandomObjectCube(1);
 				if (i < 2) {
 					i++;
 					snake_script.AddBodyPart ();
