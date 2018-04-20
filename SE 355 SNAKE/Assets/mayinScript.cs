@@ -19,7 +19,6 @@ public class mayinScript : MonoBehaviour {
 			if ((item.transform.position - transform.position).magnitude < 1.5f) {
 				Destroy (item);
 				DestroyGameObject_script.score=DestroyGameObject_script.score-5;
-				Handheld.Vibrate ();
 				DestroyGameObject_script.scoreUI.text = "Score: "+DestroyGameObject_script.score.ToString ();
 				sn.GenerateRandomObjectMayin(1);
 			}
