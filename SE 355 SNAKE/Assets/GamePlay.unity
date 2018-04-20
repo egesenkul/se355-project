@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5, y: -65.55597}
+  m_AnchoredPosition: {x: -0.5, y: 200}
   m_SizeDelta: {x: -196.99997, y: -920.88806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29650555
@@ -169,7 +169,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
@@ -363,6 +363,8 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1705810897}
   menuButton: {fileID: 0}
   gameOverMenuUI: {fileID: 1684705722}
+  scoreUI: {fileID: 1185225146}
+  highScoreUI: {fileID: 29650555}
 --- !u!1 &326301866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1459,7 @@ GameObject:
   - component: {fileID: 1185225147}
   - component: {fileID: 1185225146}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: scoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1478,7 +1480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5, y: -65.55597}
+  m_AnchoredPosition: {x: 0, y: 79}
   m_SizeDelta: {x: -196.99997, y: -920.88806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185225146
@@ -1502,7 +1504,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_FontSize: 35
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
@@ -2046,7 +2048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1684705723
 RectTransform:
   m_ObjectHideFlags: 0
