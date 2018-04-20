@@ -338,8 +338,11 @@ RectTransform:
   m_Children:
   - {fileID: 1705810898}
   - {fileID: 1936487659}
+<<<<<<< HEAD
   - {fileID: 764505388}
   - {fileID: 1684705723}
+=======
+>>>>>>> parent of 5f7d2a1... Score & High Score added
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -361,10 +364,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyGameObject_script: {fileID: 0}
   pauseMenuUI: {fileID: 1705810897}
+<<<<<<< HEAD
   menuButton: {fileID: 0}
   gameOverMenuUI: {fileID: 1684705722}
   scoreUI: {fileID: 1185225146}
   highScoreUI: {fileID: 29650555}
+=======
+>>>>>>> parent of 5f7d2a1... Score & High Score added
 --- !u!1 &326301866
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +573,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9060ab5a17a4849719b9f96375f62f55, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!1 &758862818
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +722,8 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 764505387}
+=======
+>>>>>>> parent of 5f7d2a1... Score & High Score added
 --- !u!1 &885906501
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +846,43 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 885906501}
+<<<<<<< HEAD
 --- !u!1 &923313017
+=======
+--- !u!1 &991118945 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1438538504225276, guid: 9060ab5a17a4849719b9f96375f62f55,
+    type: 2}
+  m_PrefabInternal: {fileID: 743686208}
+--- !u!114 &991118951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991118945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49869042d8ada4edfa693e49831596b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0, z: 0}
+--- !u!114 &991118952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991118945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793c504248a0843b59b0b8d8edda5c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snake_script: {fileID: 0}
+  i: 0
+  sn: {fileID: 991118951}
+--- !u!1 &1183149355
+>>>>>>> parent of 5f7d2a1... Score & High Score added
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
