@@ -711,6 +711,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyGameObject_script: {fileID: 0}
   sn: {fileID: 185532821}
+  gameOverMenuUI: {fileID: 1684705722}
+  HighS: {fileID: 62278882}
+  Score: {fileID: 1275768134}
+  oyunSkoru: {fileID: 764505389}
+  GameStop: 0
 --- !u!114 &772457436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,7 +746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyGameObject_script: {fileID: 0}
   sn: {fileID: 185532821}
-  ss: {fileID: 0}
+  ss: {fileID: 185532819}
   tenSec: 10
   timerRunning: 1
   tersUIText: {fileID: 1401248936}
@@ -1772,7 +1777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0.47586206, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2134,7 +2139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

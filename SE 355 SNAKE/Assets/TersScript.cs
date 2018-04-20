@@ -39,7 +39,7 @@ public class TersScript : MonoBehaviour {
 		if(timerRunning){
 			tenSec -= Time.smoothDeltaTime;
 			if(tenSec >= 0){
-				tersUIText.text = "REVERSE "+tenSec.ToString().Substring(0,3)+" SEC";
+				tersUIText.text = "REVERSE "+tenSec.ToString().Substring(0,1)+" SEC";
 			}else{
 				tersUIText.text = "";
 				timerRunning = false;

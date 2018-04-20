@@ -102,7 +102,7 @@ public class RandomCreateObject : MonoBehaviour {
 		GameObject[] Mayinlar;
 		Mayinlar = GameObject.FindGameObjectsWithTag("mayin");
 		foreach (GameObject item in Mayinlar) {
-			if ((item.transform.position - position).magnitude < 2) {
+			if ((item.transform.position - position).magnitude < 4) {
 				return false;
 			}
 		}
