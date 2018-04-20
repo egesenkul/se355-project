@@ -24,8 +24,9 @@ public class DestroyGameObject : MonoBehaviour {
 		GameObject[] Cubeler;
 		Cubeler = GameObject.FindGameObjectsWithTag("Cube");
 		foreach (GameObject item in Cubeler) {
-			if ((item.transform.position - transform.position).magnitude < 1.5f) {
+			if ((item.transform.position - transform.position).magnitude < 1.3f) {
 				Destroy (item);
+				sn.bonusSayisi--;
 				score++;
 				scoreUI.text = "Score: "+score.ToString ();
 				if (score > highScore) {

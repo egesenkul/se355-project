@@ -10,6 +10,7 @@ public class SnakeScript : MonoBehaviour {
 	public float mindistance = 0.25f;
 	public int beginsize=1;
 
+	public bool ters=false;
 	public bool swipeRight=false;
 	public bool swipeLeft=false;
 
@@ -39,7 +40,6 @@ public class SnakeScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Move ();
-
 		if(Input.GetKeyDown(KeyCode.Q)){
 			AddBodyPart();
 		}
@@ -52,9 +52,17 @@ public class SnakeScript : MonoBehaviour {
 		}
 		BodyParts[0].Translate(BodyParts[0].forward*curspeed*Time.smoothDeltaTime,Space.World);
 		if (swipeRight) {
-			BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * 10);
+			if (!ters) {
+				BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * 10);
+			} else {
+				BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * -10);
+			}
 		} else if (swipeLeft) {
-			BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * -10);
+			if (!ters) {
+				BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * -10);
+			} else {
+				BodyParts [0].Rotate (Vector3.up * rotationSpeed * Time.deltaTime * 10);
+			}
 		}
 		swipeLeft = swipeRight = false;
 		for(int i =1;i<BodyParts.Count;i++){
