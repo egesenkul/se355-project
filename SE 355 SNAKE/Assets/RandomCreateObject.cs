@@ -9,13 +9,14 @@ public class RandomCreateObject : MonoBehaviour {
 
 	GameObject player;
 	public GameObject mayin;
+	public GameObject bonus;
 
 	// Use this for initialization
 	void Start () {
 		size = new Vector3 (10, 10, 10);
 		player = GameObject.Find ("Snake");;
 		GenerateRandomObjectCube (10);
-		GenerateRandomObjectMayin (3);
+		GenerateRandomObjectMayin (4);
 	}
 	
 	// Update is called once per frame
@@ -46,7 +47,7 @@ public class RandomCreateObject : MonoBehaviour {
 		for (int j = 0; j < i; j++) {
 			Vector3 pos = new Vector3 (Random.Range (-size.x / 2, size.x / 2), Random.Range (-size.y / 2, size.y / 2), Random.Range (-size.z / 2, size.z / 2));
 			if ((player.transform.position - pos).magnitude > 0.5f && CubeMesafeKontrol(pos)) {
-				GameObject cube = GameObject.CreatePrimitive (PrimitiveType.Cube);
+				GameObject cube = Instantiate(bonus);
 				cube.tag = "Cube";
 				cube.transform.position = pos;
 				cube.AddComponent<Rigidbody> ();

@@ -11,8 +11,11 @@ public class PauseMenu : MonoBehaviour {
 	public GameObject pauseMenuUI;
 	public GameObject menuButton;
 	public GameObject gameOverMenuUI;
-	public Text scoreUI;
-	public Text highScoreUI;
+
+	public Text HighS;
+	public Text Score;
+
+	public Text oyunSkoru;
 
 	void Start (){
 		menuButton = GameObject.Find ("ButtonPause");
@@ -29,9 +32,9 @@ public class PauseMenu : MonoBehaviour {
 		if (DestroyGameObject_script.score < 0) {
 			gameOverMenuUI.SetActive (true);
 			Time.timeScale = 0f;
-			DestroyGameObject_script.scoreUI.enabled = false;
-			highScoreUI.text = "High Score: "+PlayerPrefs.GetInt ("HighScore");
-			scoreUI.text = "Score: " + DestroyGameObject_script.score;
+			Score.text = "Score: "+DestroyGameObject_script.score;
+			HighS.text = "High Score: "+PlayerPrefs.GetInt ("HighScore").ToString();
+			oyunSkoru.enabled = false;
 		}
 			
 	}
