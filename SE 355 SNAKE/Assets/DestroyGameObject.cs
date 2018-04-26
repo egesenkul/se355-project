@@ -29,9 +29,6 @@ public class DestroyGameObject : MonoBehaviour {
 				sn.bonusSayisi--;
 				score++;
 				scoreUI.text = "Score: "+score.ToString ();
-				if (score > highScore) {
-					PlayerPrefs.SetInt ("HighScore", score);
-				}
 				snake_script.speed += 0.25f;
 				sn.GenerateRandomObjectCube(1);
 				if (i < 2) {

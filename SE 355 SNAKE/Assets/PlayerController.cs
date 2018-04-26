@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 	// This script for control player with swipe gestures in mobile devices 
-	public float minSwipeDist=50;
+	public float minSwipeDist=20;
 
 	public Text controlText;
 
@@ -121,8 +121,6 @@ public class PlayerController : MonoBehaviour {
 		}
 		rb.MovePosition (rb.position + transform.TransformDirection (dir2) * speed * Time.deltaTime);
 		swipeLeft = swipeRight = swipeDown = swipeUp = false;
-		//speed += 0.02f;
-		Debug.Log (dir2);
 	}
 }
 
